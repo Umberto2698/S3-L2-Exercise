@@ -90,6 +90,7 @@
       };
 
       changeTitle();
+
       /* ESERCIZIO 2
          Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
       */
@@ -100,6 +101,7 @@
       };
 
       addClassToTitle();
+
       /* ESERCIZIO 3
          Scrivi una funzione per che cambi il testo dei p figli di un div
         */
@@ -256,6 +258,7 @@
           tableImg[i].classList.add("hidden");
         }
       };
+      //hideAllImages();
 
       /* EXTRA ESERCIZIO 15
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
@@ -275,7 +278,77 @@
         Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
       */
 
-      const deleteVowels = function () {};
+      const deleteVowels = function () {
+        let p = document.getElementsByTagName("p");
+        let h1 = document.getElementsByTagName("h1");
+        let h2 = document.getElementsByTagName("h2");
+        let h3 = document.getElementsByTagName("h3");
+        let a = document.getElementsByTagName("a");
+        let li = document.getElementsByTagName("li");
+        let th = document.getElementsByTagName("th");
+        let td = document.getElementsByTagName("td");
+        const isVowels = (letter) => {
+          if (
+            letter === "a" ||
+            letter === "A" ||
+            letter === "à" ||
+            letter === "e" ||
+            letter === "E" ||
+            letter === "è" ||
+            letter === "i" ||
+            letter === "I" ||
+            letter === "o" ||
+            letter === "O" ||
+            letter === "u" ||
+            letter === "U"
+          ) {
+            return false;
+          } else {
+            return true;
+          }
+        };
+        for (let i = 0; i < p.length; i++) {
+          let pArr = [...p[i].innerText];
+          pArr = pArr.filter(isVowels);
+          p[i].innerText = pArr.join(" ");
+        }
+        for (let i = 0; i < h1.length; i++) {
+          let h1Arr = [...h1[i].innerText];
+          h1Arr = h1Arr.filter(isVowels);
+          h1[i].innerText = h1Arr.join(" ");
+        }
+        for (let i = 0; i < h2.length; i++) {
+          let h2Arr = [...h2[i].innerText];
+          h2Arr = h2Arr.filter(isVowels);
+          h2[i].innerText = h2Arr.join(" ");
+        }
+        for (let i = 0; i < h3.length; i++) {
+          let h3Arr = [...h3[i].innerText];
+          h3Arr = h3Arr.filter(isVowels);
+          h3[i].innerText = h3Arr.join(" ");
+        }
+        for (let i = 0; i < a.length; i++) {
+          let alert = [...a[i].innerText];
+          alert = alert.filter(isVowels);
+          a[i].innerText = alert.join(" ");
+        }
+        for (let i = 0; i < li.length; i++) {
+          let liArr = [...li[i].innerText];
+          liArr = liArr.filter(isVowels);
+          li[i].innerText = liArr.join(" ");
+        }
+        for (let i = 0; i < th.length; i++) {
+          let thArr = [...th[i].innerText];
+          thArr = thArr.filter(isVowels);
+          th[i].innerText = thArr.join(" ");
+        }
+        for (let i = 0; i < td.length; i++) {
+          let tdArr = [...td[i].innerText];
+          tdArr = tdArr.filter(isVowels);
+          td[i].innerText = tdArr.join(" ");
+        }
+      };
+      //deleteVowels();
     </script>
   </body>
 </html>
